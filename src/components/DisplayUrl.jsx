@@ -10,7 +10,7 @@ function DisplayUrl() {
   return (
     <section className="bg-custom-gray bg-opacity-25 pt-32 gap-4">
       {result?.map(item => (
-        <div className="p-3 custom-card bg-white w-[80vw] m-auto rounded-lg flex justify-items-center place-items-center mt-4" key={item?.id}>
+        <div className="p-3 custom-card bg-white w-[80vw] m-auto rounded-lg flex justify-items-center place-items-center mt-4" key={item}>
           <p className="flex-1">{item.result.original_link}</p>
           <a target="_blank" href={item.result.full_short_link} className="pr-5 text-custom-cyan">
             {item.result.full_short_link}

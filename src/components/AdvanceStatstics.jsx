@@ -34,7 +34,7 @@ function AdvanceStatstics() {
       <div className="flex place-items-center justify-center gap-10">
       <div className="absolute bg-custom-cyan h-4 w-[500px]"></div>
         {stats.map(item => (
-          <StasticCard {...item} />
+          <StasticCard key={item.heading} {...item} />
         ))}
       </div>
     </section>

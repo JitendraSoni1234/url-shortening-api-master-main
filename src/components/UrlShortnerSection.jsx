@@ -19,7 +19,9 @@ function UrlShortnerSection() {
         <button
           className="bg-custom-cyan border-0 py-2 px-6 focus:outline-none rounded text-white hover:bg-cyan-400"
           onClick={() => {
-            getResults(value);
+            if (value.length) {
+              getResults(value);
+            }
             setValue("");
           }}>
           Shorten It!

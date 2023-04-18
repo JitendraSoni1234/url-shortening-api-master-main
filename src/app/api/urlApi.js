@@ -31,7 +31,13 @@ export const urlShortner = createApi({
   endpoints: builder => ({
     getShortenUrl: builder.query({
       query: name => {
-        return `shorten?url=${name}`;
+        let urlString = name;
+        if (urlString.startsWith("https://")) {
+          urlString = urlString.substr(8);
+        } else if (urlString.startsWith("http://")) {
+          urlString = urlString.substr(7);
+        }
+        return `shorten?url=${urlString}`;
       },
       onQueryStarted: (curent, { dispatch, getState, cancelRequest }) => {
         const urls = getState()?.url?.inputUrl;
